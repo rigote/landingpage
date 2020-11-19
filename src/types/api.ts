@@ -44,7 +44,7 @@ export type SectionConceptsProps = {
   }>
 }
 
-export type sectionModulesProps = {
+export type SectionModulesProps = {
   title: string
   modules: Array<{
     title: string
@@ -53,11 +53,29 @@ export type sectionModulesProps = {
   }>
 }
 
+export type SectionAgendaProps = {
+  title: string
+  description: string
+}
+
+export type PricingBoxProps = {
+  totalPrice: number
+  numberInstallments: number
+  priceInstallment: number
+  benefits: string
+  button: {
+    label: string
+    url: string
+  }
+}
+
 export type LandingPageProps = {
   logo: LogoProps
   header: HeaderProps
   sectionAboutProject: SectionAboutProjectProps
   sectionTech: SectionTechProps
   sectionConcepts: SectionTechProps
-  sectionModules: sectionModulesProps
+  sectionModules: SectionModulesProps
+  sectionAgenda: SectionAgendaProps
+  pricingBox: PricingBoxProps
 }
