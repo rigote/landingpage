@@ -109,11 +109,22 @@ const GET_LANDING_PAGE = /* Graphql */ `
     sectionReviews {
       title
       reviews {
+        id
         name
         text
         photo {
           url
         }
+      }
+    }
+  }
+
+  fragment sectionFaq on LandingPage {
+    sectionFaq {
+      title
+      questions {
+        question
+        answer
       }
     }
   }
@@ -130,6 +141,7 @@ const GET_LANDING_PAGE = /* Graphql */ `
       ...pricingBox
       ...sectionAboutUs
       ...sectionReviews
+      ...sectionFaq
     }
   }
 `
