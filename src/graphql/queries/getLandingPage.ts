@@ -36,10 +36,32 @@ const GET_LANDING_PAGE = /* Graphql */ `
     sectionTech {
       title
       techIcons {
-        title
         icon {
+          name
           url
         }
+        title
+      }
+    }
+  }
+
+  fragment sectionConcepts on LandingPage {
+    sectionConcepts {
+      title
+      concepts {
+        id
+        title
+      }
+    }
+  }
+
+  fragment sectionModules on LandingPage {
+    sectionModules {
+      title
+      modules {
+        title
+        subtitle
+        description
       }
     }
   }
@@ -50,8 +72,9 @@ const GET_LANDING_PAGE = /* Graphql */ `
       ...header
       ...sectionAboutProject
       ...sectionTech
+      ...sectionConcepts
+      ...sectionModules
     }
   }
-
 `
 export default GET_LANDING_PAGE
